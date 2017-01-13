@@ -166,7 +166,7 @@
                                         </div>	
                                     </li>
                                     <li><a class="color4" href="404.jsp">Giới thiệu</a></li>
-                                    <li><a class="color5" href="typo.html">Tin Tức</a></li>
+                                    <li><a class="color5" href="news.jsp">Tin Tức</a></li>
                                     <li ><a class="color6" href="contact.jsp">Liên hệ</a></li>
                                 </ul>
                             </div><!-- /.navbar-collapse -->

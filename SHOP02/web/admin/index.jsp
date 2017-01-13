@@ -1,4 +1,4 @@
-
+<%@page import="model.User_staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -19,13 +19,16 @@
         
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-        <link href="../css/admin/skins/_all-skins.css" rel="stylesheet" type="text/css"/>
-        <link href="css/skins/_all-skins.css" rel="stylesheet" type="text/css"/>
-        <link href="../css/admin/skins/_all-skins.min.css" rel="stylesheet" type="text/css"/>
+        
     </head>
 
-
     <body class="hold-transition skin-blue sidebar-mini">
+        <%
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }            
+        %>
         <jsp:include page="_Header.jsp"></jsp:include>
         <jsp:include page="_Slidebar.jsp"></jsp:include>
 
