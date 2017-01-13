@@ -14,7 +14,7 @@
 
         <title>Trang quản lý thương hiệu</title>
         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        
+
         <link href="${root}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
@@ -45,26 +45,26 @@
                             <div class="col-sm-2">
 
                                 <a href="${root}/admin/manager_supplies/insert.jsp">
-                                    <button type="button" class="btn btn-block btn-info btn-xs"><i class="fa fa-plus"></i> Thêm nhà cung cấp</button>
-                                </a>
-                            </div>
-
+                                <button type="button" class="btn btn-block btn-info btn-xs"><i class="fa fa-plus"></i> Thêm nhà cung cấp</button>
+                            </a>
                         </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th  style="width: 13%;">Mã nhà cung cấp</th>
-                                                <th  style="width: 25%;">Tên nhà cung cấp</th>
-                                                <th  style="width: 32%;">Địa chỉ</th>
-                                                <th  style="width: 20%;">Điện thoại</th>
-                                                <th  style="width: 10%;"> </th>
 
-                                            </tr>
-                                        </thead>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th  style="width: 13%;">Mã nhà cung cấp</th>
+                                            <th  style="width: 25%;">Tên nhà cung cấp</th>
+                                            <th  style="width: 32%;">Địa chỉ</th>
+                                            <th  style="width: 20%;">Điện thoại</th>
+                                            <th  style="width: 10%;"> </th>
 
-                                        <tbody>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
                                         <%
                                             for (Supply supply : listSupply) {
                                         %>
@@ -93,11 +93,9 @@
                 </div>
                 <!-- /.box-body -->
             </div>
-
-
         </div>
-    </div>
-    <jsp:include page="../_Footer.jsp"></jsp:include>
 
-</body>
+
+
+    </body>
 </html>

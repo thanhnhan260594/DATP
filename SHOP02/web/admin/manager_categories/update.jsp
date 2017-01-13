@@ -67,7 +67,5 @@
                 </div>
             </div>
 
-        <jsp:include page="../_Footer.jsp"></jsp:include>
-
     </body>
 </html>

@@ -1,4 +1,5 @@
 
+<%@page import="dao.ProductDAO"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,13 +10,16 @@
         <c:set var="root" value="${pageContext.request.contextPath}"/>
     </head>
     <body>
+
         <aside class="main-sidebar">
+
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
+                
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
                     <div class="pull-left image">
-                        <img src="../img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="${root}/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
                         <p>Alexander Pierce</p>
@@ -44,9 +48,10 @@
                     <li class="treeview">
                         <a href="${root}/admin/manager_products/index.jsp">
                             <i class="fa fa-th-list"></i>
-                            <span>Sản Phẩm</span>                            
+                            <span>Sản Phẩm</span> 
+                            <small class="label pull-right bg-yellow"></small>
                         </a>
-                       
+
                     </li>
                     <li>
                         <a href="${root}/admin/manager_categories/index.jsp">
@@ -56,19 +61,19 @@
                             </span>
                         </a>
                     </li>
-                   <li class="treeview">
+                    <li class="treeview">
                         <a href="${root}/admin/manager_supplies/index.jsp">
                             <i class="fa fa-sitemap"></i> <span>Thương hiệu</span>
-                            
+
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
                             <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
                         </ul>
                     </li>
-                   
+
                     <li class="treeview">
-                        <a href="#">
+                        <a href="${root}/admin/manager_orders/index.jsp">
                             <i class="fa fa-edit"></i> <span>Đơn hàng</span>
                             <span class="pull-right-container">
                                 <i class="fa fa-angle-left pull-right"></i>
@@ -80,7 +85,7 @@
                             <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
                         </ul>
                     </li>
-                    
+
                     <li>
                         <a href="pages/calendar.html">
                             <i class="fa fa-calendar"></i> <span>Calendar</span>

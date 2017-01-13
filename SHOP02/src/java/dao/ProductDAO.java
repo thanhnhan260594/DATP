@@ -47,6 +47,19 @@ public class ProductDAO {
         }
         return count;
     }
+    public int countProduct() throws SQLException
+    {
+        Connection connection = DBConnect.getConnecttion();
+        String sql = "SELECT count(id_product) FROM products ";
+        PreparedStatement ps = connection.prepareCall(sql);
+
+        ResultSet rs = ps.executeQuery();
+        int count = 0;
+        while (rs.next()) {
+            count = rs.getInt(1);
+        }
+        return count;
+    }
 
     // lấy sản phẩm mới nhất       
     public ArrayList<Product> getListNewProduct() throws SQLException {

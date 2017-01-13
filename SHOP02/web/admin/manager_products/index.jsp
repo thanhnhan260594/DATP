@@ -14,7 +14,7 @@
 
         <title>Trang quản lý sản phẩm</title>
         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        
+
         <link href="${root}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
@@ -38,37 +38,37 @@
 
             <div class="content-wrapper">
                 <div class="col-md-12">
-                    <h1>Danh sách nhà cung cấp</h1>
+                    <h1>Danh sách sản phẩm</h1>
                     <div class="box">
                         <div class="box-header">
                             <div class="col-sm-1 "></div>
                             <div class="col-sm-2">
 
                                 <a href="${root}/admin/manager_products/insert.jsp">
-                                    <button type="button" class="btn btn-block btn-info btn-xs"><i class="fa fa-plus"></i> Thêm nhà cung cấp</button>
-                                </a>
-                            </div>
-
+                                <button type="button" class="btn btn-block btn-info btn-xs"><i class="fa fa-plus"></i> Thêm sản phẩm</button>
+                            </a>
                         </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                            <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
-                                        <thead>
-                                            <tr role="row">
-                                                <th  style="width: 10%;">Mã sản phẩm</th>
-                                                <th  style="width: 10%;">Tên sản phẩm</th>
-                                                <th  style="width: 10%;">Hình ảnh</th>
-                                                <th  style="width: 10%;">Giá</th>
-                                                <th  style="width: 20%;">Mô tả</th>
-                                                <th  style="width: 10%;">Ngày nhập</th>
-                                                <th  style="width: 5%;">Thương hiệu</th>
-                                                <th  style="width: 5%;">Phân loại</th>
-                                                <th  style="width: 10%;"> </th>
 
-                                            </tr>
-                                        </thead>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                                    <thead>
+                                        <tr role="row">
+                                            <th  style="width: 10%;">Mã sản phẩm</th>
+                                            <th  style="width: 10%;">Tên sản phẩm</th>
+                                            <th  style="width: 10%;">Hình ảnh</th>
+                                            <th  style="width: 10%;">Giá</th>
+                                            <th  style="width: 20%;">Mô tả</th>
+                                            <th  style="width: 10%;">Ngày nhập</th>
+                                            <th  style="width: 5%;">Thương hiệu</th>
+                                            <th  style="width: 5%;">Phân loại</th>
+                                            <th  style="width: 10%;"> </th>
 
-                                        <tbody>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
                                         <%
                                             for (Product p : listProduct) {
                                         %>
@@ -81,7 +81,7 @@
                                             <td><%=p.getProductDate()%></td>
                                             <td><%=p.getSupplyID()%></td>
                                             <td><%=p.getCategoryID()%></td>
-                                            
+
                                             <td>
                                     <center>
                                         <a href="${root}/admin/manager_products/update.jsp?command=update&id_product=<%=p.getProductID()%>&nameSupplies=<%=p.getProductName()%>&"><i class="fa fa-fw fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -105,8 +105,7 @@
 
 
         </div>
-    </div>
-    <jsp:include page="../_Footer.jsp"></jsp:include>
+        
 
-</body>
+    </body>
 </html>
