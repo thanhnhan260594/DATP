@@ -199,10 +199,13 @@
                             <div id="small-dialog" class="mfp-hide">
                                 <div class="search-top">
                                     <div class="login-search">
-                                        <input type="submit" value="">
-                                        <input type="text" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {
-                                                    this.value = 'Search..';
-                                                }">		
+                                        <form action="ProductServlet" method="post" >
+                                            <input type="submit" value="">
+                                            <input type="text" name="key" value="Search.." onfocus="this.value = '';" onblur="if (this.value == '') {
+                                                        this.value = 'Search..';
+                                                    }">
+                                        </form>
+
                                     </div>
                                     <p>Tìm kiếm</p>
                                 </div>				

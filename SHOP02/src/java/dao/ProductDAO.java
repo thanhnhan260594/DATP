@@ -33,8 +33,8 @@ public class ProductDAO {
         }
         return list;
     }
-// tính tổng sản phẩm
-
+    
+    // tính tổng sản phẩm theo danh mục
     public int countProductByCategory(long cate_id) throws SQLException {
         Connection connection = DBConnect.getConnecttion();
         String sql = "SELECT count(id_product) FROM products WHERE id_cate = '" + cate_id + "'";
@@ -47,6 +47,8 @@ public class ProductDAO {
         }
         return count;
     }
+    
+    //tổng sản phẩm
     public int countProduct() throws SQLException
     {
         Connection connection = DBConnect.getConnecttion();
@@ -105,7 +107,28 @@ public class ProductDAO {
         }
         return list;
     }
+  //lấy danh sách tìm kiếm
+    public ArrayList<Product> getListProductByWord(String w) throws SQLException {
+        Connection connection = DBConnect.getConnecttion();
+        String sql = "SELECT * FROM products WHERE name_product like '%"+w+"%'";
+        PreparedStatement ps = connection.prepareCall(sql);
+        ResultSet rs = ps.executeQuery();
 
+        ArrayList<Product> list = new ArrayList<>();
+        while (rs.next()) {
+            Product product = new Product();
+            product.setProductID(rs.getLong("id_product"));
+            product.setProductName(rs.getString("name_product"));
+            product.setProductImage(rs.getString("image"));
+            product.setProductPrice(rs.getDouble("price"));
+            product.setProductDescription(rs.getString("description"));
+            product.setProductSlug(rs.getString("slug_product"));
+            list.add(product);
+        }
+        return list;
+    }
+    
+//lấy thông tin sản phẩm
     public Product getProduct(long productID) throws SQLException {
         Connection connection = DBConnect.getConnecttion();
         String sql = "SELECT * FROM products WHERE id_product = " + productID;
@@ -121,7 +144,7 @@ public class ProductDAO {
         }
         return product;
     }
-
+//thêm sản phẩm
     public boolean insertProduct(Product s) {
         Connection connection = DBConnect.getConnecttion();
         String sql = "INSERT INTO products "
@@ -144,7 +167,7 @@ public class ProductDAO {
         }
         return false;
     }
-
+//cập nhật sản phẩm
     public boolean updateProduct(Product s) {
         Connection connection = DBConnect.getConnecttion();
         String sql = "UPDATE products "
@@ -166,7 +189,7 @@ public class ProductDAO {
         }
         return false;
     }
-
+//xóa sản phẩm
     public boolean deleteProduct(long productID) {
         Connection connection = DBConnect.getConnecttion();
         String sql = "DELETE FROM products WHERE id_product = ?";
@@ -180,6 +203,7 @@ public class ProductDAO {
         }
         return false;
     }
+    
 
     public static void main(String[] args) throws SQLException {
         ProductDAO dao = new ProductDAO();
@@ -191,6 +215,10 @@ public class ProductDAO {
 //        System.out.println(dao.countProductByCategory(1));
 //        System.out.println(dao.insertProduct(new Product(a.getTime()%100, "TEST2", 20000.0, "test-2", "somi02.jpg", "áo test 2", 2, 2, sqlDate )));
 //        System.out.println(dao.updateProduct(new Product(64, "TEST", 300000.0, "test", "somi01.jpg", "áo test 1", 1, 1, sqlDate)));
-        System.out.println(dao.deleteProduct(90));
+//        System.out.println(dao.deleteProduct(90));
+
+        for (Product ds : dao.getListProductByWord("đen")){
+            System.out.println(ds.getProductID()+ " - " + ds.getProductName());
+        }
     }
 }
