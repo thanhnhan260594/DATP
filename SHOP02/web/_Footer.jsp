@@ -37,7 +37,7 @@
                     <div class="col-md-3 footer-middle-in">
                         <h6>Tags</h6>
                         <ul class="tag-in">
-                            <li><a href="#">Lorem</a></li>
+                            <li><a href="finditem.jsp?key=Sơ mi">Sơ mi</a></li>                            
                             <li><a href="#">Sed</a></li>
                             <li><a href="#">Ipsum</a></li>
                             <li><a href="#">Contrary</a></li>

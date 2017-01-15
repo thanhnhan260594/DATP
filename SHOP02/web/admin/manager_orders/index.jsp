@@ -1,3 +1,4 @@
+<%@page import="model.User_staff"%>
 <%@page import="model.Order"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.OrderDAO"%>
@@ -29,6 +30,12 @@
     <body class="hold-transition skin-blue sidebar-mini">
 
         <%
+            
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }            
+        
             OrderDAO orderDAO = new OrderDAO();
             ArrayList<Order> listOrder = orderDAO.getListOrder();
         %>

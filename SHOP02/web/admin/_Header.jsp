@@ -11,7 +11,7 @@
     <body>
         <header class="main-header">
             <!-- Logo -->
-            <a href="${root}/admin/index.jsp" class="logo">
+            <a href="${root}/StatisticsServlet" class="logo">
                 
                 <span class="logo-lg"><b>Admin</b>LTE</span>
             </a>

@@ -4,6 +4,7 @@
     Author     : thanh_000
 --%>
 
+<%@page import="model.User_staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <%
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }            
+        %>
     </body>
 </html>

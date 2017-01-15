@@ -67,4 +67,19 @@ public class UserDAO {
         }
         return null;
     }
+    
+    //đếm tài khoản
+    public int countUser() throws SQLException
+    {
+        Connection connection = DBConnect.getConnecttion();
+        String sql = "SELECT count(id_user) FROM users ";
+        PreparedStatement ps = connection.prepareCall(sql);
+
+        ResultSet rs = ps.executeQuery();
+        int count = 0;
+        while (rs.next()) {
+            count = rs.getInt(1);
+        }
+        return count;
+    }
 }

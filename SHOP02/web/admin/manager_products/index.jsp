@@ -1,3 +1,4 @@
+<%@page import="model.User_staff"%>
 <%@page import="model.Product"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.ProductDAO"%>
@@ -29,6 +30,12 @@
     <body class="hold-transition skin-blue sidebar-mini">
 
         <%
+
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }
+
             ProductDAO productDAO = new ProductDAO();
             ArrayList<Product> listProduct = productDAO.getListProduct();
         %>
@@ -74,15 +81,16 @@
                                         %>
                                         <tr role="row" class="odd">
                                             <td><%=p.getProductID()%></td>
+                                            
                                             <td><%=p.getProductName()%></td>
-                                            <td><%=p.getProductImage()%></td>                                            
+                                            <td><img src="${root}/images/<%=p.getProductImage()%>" alt="" class="img-responsive" /></td>                                            
                                             <td><%=p.getProductPrice()%></td>
                                             <td><%=p.getProductDescription()%></td>
                                             <td><%=p.getProductDate()%></td>
                                             <td><%=p.getSupplyID()%></td>
                                             <td><%=p.getCategoryID()%></td>
 
-                                            <td>
+                                    <td>
                                     <center>
                                         <a href="${root}/admin/manager_products/update.jsp?command=update&id_product=<%=p.getProductID()%>&nameSupplies=<%=p.getProductName()%>&"><i class="fa fa-fw fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
                                         <a href="/SHOP02/ManagerProductsServlet?command=delete&id_sup=<%=p.getProductID()%>"><i class="fa fa-fw fa-trash-o"></i></a>
@@ -105,7 +113,7 @@
 
 
         </div>
-        
+
 
     </body>
 </html>

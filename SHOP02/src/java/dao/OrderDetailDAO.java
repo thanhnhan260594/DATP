@@ -20,6 +20,7 @@ public class OrderDetailDAO {
         ps.setDouble(4, od.getPrice());        
         ps.executeUpdate();
     }
+    
 
     public static void main(String[] args) throws SQLException {
         new OrderDetailDAO().insertOrderDetail(new OrderDetail(1, 1, 33, 4));

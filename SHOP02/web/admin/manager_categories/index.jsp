@@ -1,3 +1,4 @@
+<%@page import="model.User_staff"%>
 <%@page import="dao.CategoryDAO"%>
 <%@page import="model.Category"%>
 <%@page import="model.Supply"%>
@@ -31,6 +32,12 @@
     <body class="hold-transition skin-blue sidebar-mini">
 
         <%
+            
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }            
+        
             CategoryDAO categoryDAO = new CategoryDAO();
             ArrayList<Category> listCategory = categoryDAO.getListCategoryAll();
         %>

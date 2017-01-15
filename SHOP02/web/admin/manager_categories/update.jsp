@@ -11,8 +11,8 @@
 
         <title>Trang quản lý thương hiệu</title>
 
-         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        
+        <c:set var="root" value="${pageContext.request.contextPath}"/>
+
         <link href="${root}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
@@ -25,8 +25,13 @@
 
 
     <body class="hold-transition skin-blue sidebar-mini">
+        <%
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }
+        %>
 
-       
 
         <jsp:include page="../_Header.jsp"></jsp:include>
         <jsp:include page="../_Slidebar.jsp"></jsp:include>
@@ -40,7 +45,7 @@
                         <div class="box-body col-md-6 ">
                             <form role="form" action="/SHOP02/ManagerSuppliesServlet" method="post">
                                 <!-- text input -->                               
-                                
+
                                 <div class="form-group">
                                     <label>Tên danh mục</label>
                                     <input type="text" name="nameCategories" class="form-control" placeholder="">
@@ -49,7 +54,7 @@
                                     <label>Phân loại</label>
                                     <input type="text" name="idPar" class="form-control" placeholder="">
                                 </div>
-                                
+
                                 <div class=" col-md-12">
                                     <div class=" col-md-6">                                    
                                         <input type="hidden" name="command" value="insert">
@@ -57,15 +62,15 @@
                                     </div>
                                     <div class=" col-md-6">                                    
                                         <a href="${root}/admin/manager_categories/index.jsp"><button type="button" class="btn btn-block btn-warning">Trở về</button></a>
-                                    </div>
-
                                 </div>
-                            </form>
-                        </div>
-                        <!-- /.box-body -->
+
+                            </div>
+                        </form>
                     </div>
+                    <!-- /.box-body -->
                 </div>
             </div>
+        </div>
 
     </body>
 </html>

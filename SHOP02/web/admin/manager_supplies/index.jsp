@@ -1,3 +1,4 @@
+<%@page import="model.User_staff"%>
 <%@page import="model.Supply"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.SupplyDAO"%>
@@ -29,6 +30,12 @@
     <body class="hold-transition skin-blue sidebar-mini">
 
         <%
+            
+            User_staff us = (User_staff) session.getAttribute("us");
+            if (us == null) {
+                response.sendRedirect("/SHOP02/admin/login.jsp");
+            }            
+        
             SupplyDAO supplyDAO = new SupplyDAO();
             ArrayList<Supply> listSupply = supplyDAO.getListSupply();
         %>

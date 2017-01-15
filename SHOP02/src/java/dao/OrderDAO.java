@@ -10,9 +10,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import model.Order;
 
 /**
@@ -50,7 +48,19 @@ public class OrderDAO {
         }
         return list;
     }
+public int countOrder() throws SQLException
+    {
+        Connection connection = DBConnect.getConnecttion();
+        String sql = "SELECT count(id_order) FROM orders";
+        PreparedStatement ps = connection.prepareCall(sql);
 
+        ResultSet rs = ps.executeQuery();
+        int count = 0;
+        while (rs.next()) {
+            count = rs.getInt(1);
+        }
+        return count;
+    }
     public static void main(String[] args) throws SQLException {
         OrderDAO dao = new OrderDAO();
         for (Order ds : dao.getListOrder()) {

@@ -34,6 +34,27 @@ public class ProductDAO {
         return list;
     }
     
+    public ArrayList<Product> getListProductBySupply(long sup_id) throws SQLException {
+        Connection connection = DBConnect.getConnecttion();
+        String sql = "SELECT * FROM products WHERE id_sup = '" + sup_id + "'";
+        PreparedStatement ps = connection.prepareCall(sql);
+//        ps.setInt(1, firstResult);
+//        ps.setInt(2, maxResult);
+        ResultSet rs = ps.executeQuery();
+        ArrayList<Product> list = new ArrayList<>();
+        while (rs.next()) {
+            Product product = new Product();
+            product.setProductID(rs.getLong("id_product"));
+            product.setProductName(rs.getString("name_product"));
+            product.setProductImage(rs.getString("image"));
+            product.setProductPrice(rs.getDouble("price"));
+            product.setProductDescription(rs.getString("description"));
+            product.setProductSlug(rs.getString("slug_product"));
+            list.add(product);
+        }
+        return list;
+    }
+    
     // tính tổng sản phẩm theo danh mục
     public int countProductByCategory(long cate_id) throws SQLException {
         Connection connection = DBConnect.getConnecttion();
@@ -66,7 +87,7 @@ public class ProductDAO {
     // lấy sản phẩm mới nhất       
     public ArrayList<Product> getListNewProduct() throws SQLException {
         Connection connection = DBConnect.getConnecttion();
-        String sql = "SELECT * FROM products ORDER BY date_update DESC";
+        String sql = "SELECT * FROM products ORDER BY date_update DESC LIMIT 8";
         PreparedStatement ps = connection.prepareCall(sql);
         ResultSet rs = ps.executeQuery();
 
@@ -207,18 +228,18 @@ public class ProductDAO {
 
     public static void main(String[] args) throws SQLException {
         ProductDAO dao = new ProductDAO();
-        java.util.Date a = new java.util.Date();
-        java.sql.Date sqlDate = new java.sql.Date(a.getTime());
-//        for (Product ds : dao.getListNewProduct()) {
-//            System.out.println(ds.getProductImage() + " - ");
-//        }
+//        java.util.Date a = new java.util.Date();
+//        java.sql.Date sqlDate = new java.sql.Date(a.getTime());
+        for (Product ds : dao.getListProductBySupply(2)) {
+            System.out.println(ds.getProductName() + " - ");
+        }
 //        System.out.println(dao.countProductByCategory(1));
 //        System.out.println(dao.insertProduct(new Product(a.getTime()%100, "TEST2", 20000.0, "test-2", "somi02.jpg", "áo test 2", 2, 2, sqlDate )));
 //        System.out.println(dao.updateProduct(new Product(64, "TEST", 300000.0, "test", "somi01.jpg", "áo test 1", 1, 1, sqlDate)));
 //        System.out.println(dao.deleteProduct(90));
 
-        for (Product ds : dao.getListProductByWord("đen")){
-            System.out.println(ds.getProductID()+ " - " + ds.getProductName());
-        }
+//        for (Product ds : dao.getListProductByWord("đen")){
+//            System.out.println(ds.getProductID()+ " - " + ds.getProductName());
+//        }
     }
 }
