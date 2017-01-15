@@ -66,35 +66,10 @@
             }
             </script>
 
-        <script src="${root}/plugins/fullcalendar/fullcalendar.js" type="text/javascript"></script>
-        <link href="${root}/plugins/fullcalendar/fullcalendar.css" rel="stylesheet" type="text/css"/>
-        <link href="${root}/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css"/>
-        <script src="${root}/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-        <link href="${root}/plugins/fullcalendar/fullcalendar.print.css" rel="stylesheet" type="text/css"/>
-        <script>
-
-            $(document).ready(function () {
-
-                $('#calendar').fullCalendar({
-                    theme: true,
-                    header: {
-                        left: 'prev,next today',
-                        center: 'title',
-                        right: 'month,agendaWeek,agendaDay,listMonth'
-                    },
-                    defaultDate: '2016-12-12',
-                    navLinks: true, // can click day/week names to navigate views
-                    editable: true,
-                    eventLimit: true, // allow "more" link when too many events			
-                });
-
-            });
-
-        </script>
-
+      
     </head>
 
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-green sidebar-mini">
         <%
             ProductDAO productDAO = new ProductDAO();
             OrderDAO orderDAO = new OrderDAO();
@@ -111,7 +86,7 @@
                 <section class="content-header">
                     <h1>Trang chủ</h1>            
                 </section>
-                <div id="calendar"></div>
+                
                 <section class="content">
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="info-box">

@@ -24,7 +24,7 @@
     </head>
 
 
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition skin-green sidebar-mini">
         <%
             User_staff us = (User_staff) session.getAttribute("us");
             if (us == null) {
