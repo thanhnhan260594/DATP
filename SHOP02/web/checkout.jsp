@@ -51,7 +51,7 @@
         <%
             User user = (User) session.getAttribute("user");
             if (user == null) {
-                response.sendRedirect("/SHOP02/login.jsp");
+                response.sendRedirect("/login.jsp");
             }
         %>
         <%

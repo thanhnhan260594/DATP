@@ -16,7 +16,7 @@
         <%
             User_staff us = (User_staff) session.getAttribute("us");
             if (us == null) {
-                response.sendRedirect("/SHOP02/admin/login.jsp");
+                response.sendRedirect("/admin/login.jsp");
             }            
         %>
     </body>

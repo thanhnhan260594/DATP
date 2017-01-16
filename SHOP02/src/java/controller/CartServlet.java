@@ -47,10 +47,10 @@ public class CartServlet extends HttpServlet {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("/SHOP02/cart.jsp");
+            response.sendRedirect("/cart.jsp");
         }
         session.setAttribute("cart", cart);
-        response.sendRedirect("/SHOP02/cart.jsp");
+        response.sendRedirect("/cart.jsp");
     }
 
 }

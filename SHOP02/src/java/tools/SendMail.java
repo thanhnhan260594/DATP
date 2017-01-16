@@ -30,13 +30,13 @@ public class SendMail {
                 new javax.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("ShopThoiTrangHT123@gmail.com", "123456");
+                return new PasswordAuthentication("thanhnhan260594@gmail.com", "delete260594");
             }
         });
         try {
             Message message = new MimeMessage(session);
             message.setHeader("Content-Type", "text/plain; charset=UTF-8");
-            message.setFrom(new InternetAddress("ShopThoiTrangHT123@gmail.com"));
+            message.setFrom(new InternetAddress("thanhnhan260594@gmail.com"));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
             message.setSubject(subject);
             message.setText(text);

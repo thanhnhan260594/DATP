@@ -33,7 +33,7 @@
 
             User_staff us = (User_staff) session.getAttribute("us");
             if (us == null) {
-                response.sendRedirect("/SHOP02/admin/login.jsp");
+                response.sendRedirect("/admin/login.jsp");
             }
 
             ProductDAO productDAO = new ProductDAO();
@@ -93,7 +93,7 @@
                                     <td>
                                     <center>
                                         <a href="${root}/admin/manager_products/update.jsp?command=update&id_product=<%=p.getProductID()%>&nameSupplies=<%=p.getProductName()%>&"><i class="fa fa-fw fa-edit"></i></a> &nbsp;&nbsp;|&nbsp;&nbsp;
-                                        <a href="/SHOP02/ManagerProductsServlet?command=delete&id_sup=<%=p.getProductID()%>"><i class="fa fa-fw fa-trash-o"></i></a>
+                                        <a href="/ManagerProductsServlet?command=delete&id_sup=<%=p.getProductID()%>"><i class="fa fa-fw fa-trash-o"></i></a>
                                     </center>
                                     </td>
                                     </tr>

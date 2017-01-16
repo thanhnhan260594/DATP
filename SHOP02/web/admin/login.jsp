@@ -13,7 +13,7 @@
     <body>
         <div class="login-card">
             <h1>Đăng nhập</h1><br>
-            <form role="form" action="/SHOP02/User_staffServlet" method="POST">
+            <form role="form" action="/User_staffServlet" method="POST">
                 <%if (session.getAttribute("error") != null) {%>
                 <div>
                     <p style="color:red"><%=session.getAttribute("error")%></p>

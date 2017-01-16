@@ -36,7 +36,7 @@
 
             User_staff us = (User_staff) session.getAttribute("us");
             if (us == null) {
-                response.sendRedirect("/SHOP02/admin/login.jsp");
+                response.sendRedirect("/admin/login.jsp");
             }
 
             SupplyDAO supplyDAO = new SupplyDAO();
@@ -57,7 +57,7 @@
                         <h3 class="box-title" style="text-align: center">Thêm sản phẩm mới</h3>
                         <div class="col-md-3"></div>
                         <div class="box-body col-md-6 ">
-                            <form role="form" action="/SHOP02/ManagerProductsServlet" method="post">
+                            <form role="form" action="/ManagerProductsServlet" method="post">
                                 <!-- text input -->                               
 
                                 <div class="form-group">

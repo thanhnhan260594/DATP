@@ -46,9 +46,10 @@ public class CheckoutServlet extends HttpServlet {
         User user = (User) session.getAttribute("user");
         try {
             long ID = new Date().getTime();
+            long kh = user.getUserID();
             Order order = new Order();
             order.setOrderID(ID);
-            order.setCustomerID(user.getUserID());
+            order.setCustomerID(kh);
             order.setDate(new Timestamp(new Date().getTime()));
             order.setTotal(cart.total());
             orderDAO.insertOrder(order);
@@ -67,6 +68,6 @@ public class CheckoutServlet extends HttpServlet {
             session.setAttribute("cart", cart);
         } catch (Exception e) {
         }
-        response.sendRedirect("/SHOP02/index.jsp");
+        response.sendRedirect("/index.jsp");
     }
 }
