@@ -83,9 +83,9 @@
                         <div class="col-md-3 item-grid1 simpleCart_shelfItem">
                             <div class=" mid-pop">
                                 <div class="pro-img">
-                                    <img src="images/<%=p.getProductImage()%>" class="img-responsive" alt="">
+                                    <img src="images/<%=p.getProductImage()%>" style=" width: 200px; height: 250px" class="img-responsive" alt="">
                                     <div class="zoom-icon ">
-                                        <a class="picture" href="images/<%=p.getProductImage()%>" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
+                                        <a class="picture"  href="images/<%=p.getProductImage()%>" style=" width: 200px; height: 250px" rel="title" class="b-link-stripe b-animate-go  thickbox"><i class="glyphicon glyphicon-search icon "></i></a>
                                         <a href="single.jsp?product=<%=p.getProductID()%>"><i class="glyphicon glyphicon-menu-right icon"></i></a>
                                     </div>
                                 </div>

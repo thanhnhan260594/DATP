@@ -1,8 +1,4 @@
-<%-- 
-    Document   : update
-    Created on : Jan 12, 2017, 2:09:42 PM
-    Author     : thanh_000
---%>
+
 
 <%@page import="model.User_staff"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -52,11 +52,7 @@
                     <div class="col-sm-5 header-social">		
                         <ul >
                             <li><a href="#"><%=user.getUserEmail()%></a> </li>
-                            <li><a href="#"><i></i></a></li>
-                            <li><a href="#"><i class="ic1"></i></a></li>
-                            <li><a href="#"><i class="ic2"></i></a></li>
-                            <li><a href="#"><i class="ic3"></i></a></li>
-                            <li><a href="#"><i class="ic4"></i></a></li>
+
                         </ul>
 
                     </div>
@@ -92,21 +88,6 @@
                                             <div class="menu-top">
                                                 <div class="col1">
                                                     <div class="h_nav">
-                                                        <h4>Nữ</h4>
-                                                        <ul>
-                                                            <%
-                                                                for (Category c : categoryDAO.getListCategory(2)) {
-                                                            %>
-                                                            <li><a href="product.jsp?category=<%=c.getCategoryID()%>"><%=c.getCategoryName()%></a></li>        
-                                                                <%
-                                                                    }
-                                                                %>
-
-                                                        </ul>	
-                                                    </div>							
-                                                </div>
-                                                <div class="col1">
-                                                    <div class="h_nav">
                                                         <h4>Nam</h4>
                                                         <ul>
                                                             <%
@@ -120,6 +101,23 @@
                                                         </ul>	
                                                     </div>							
                                                 </div>
+
+                                                <div class="col1">
+                                                    <div class="h_nav">
+                                                        <h4>Nữ</h4>
+                                                        <ul>
+                                                            <%
+                                                                for (Category c : categoryDAO.getListCategory(2)) {
+                                                            %>
+                                                            <li><a href="product.jsp?categoryID=<%=c.getCategoryID()%>&pages=1"><%=c.getCategoryName()%></a></li>        
+                                                                <%
+                                                                    }
+                                                                %>
+
+                                                        </ul>	
+                                                    </div>							
+                                                </div>
+
                                                 <div class="col1">
                                                     <div class="h_nav">
                                                         <h4>Trẻ em</h4>
@@ -127,7 +125,7 @@
                                                             <%
                                                                 for (Category c : categoryDAO.getListCategory(3)) {
                                                             %>
-                                                            <li><a href="product.jsp?category=<%=c.getCategoryID()%>"><%=c.getCategoryName()%></a></li>        
+                                                            <li><a href="product.jsp?categoryID=<%=c.getCategoryID()%>&pages=1"><%=c.getCategoryName()%></a></li>        
                                                                 <%
                                                                     }
                                                                 %>
@@ -150,7 +148,7 @@
                                                         <%
                                                             for (Supply s : supplyDAO.getListSupply()) {
                                                         %>
-                                                        <li><a href="product.jsp?category=<%=s.getSupplyID()%>"><%=s.getSupplyName()%></a></li>        
+                                                        <li><a href="product.jsp?supply=<%=s.getSupplyID()%>"><%=s.getSupplyName()%></a></li>        
                                                             <%
                                                                 }
                                                             %>
@@ -165,7 +163,7 @@
 
                                         </div>	
                                     </li>
-                                    <li><a class="color4" href="404.jsp">Giới thiệu</a></li>
+                                    <li><a class="color4" href="about.jsp">Giới thiệu</a></li>
                                     <li><a class="color5" href="news.jsp">Tin Tức</a></li>
                                     <li ><a class="color6" href="contact.jsp">Liên hệ</a></li>
                                 </ul>

@@ -3,6 +3,14 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.SupplyDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<%
+    User_staff us = (User_staff) session.getAttribute("us");
+    if (us == null) {
+        response.sendRedirect("/admin/login.jsp");
+    }
+%>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
@@ -14,8 +22,8 @@
 
         <title>Trang quản lý thương hiệu</title>
 
-         <c:set var="root" value="${pageContext.request.contextPath}"/>
-        
+        <c:set var="root" value="${pageContext.request.contextPath}"/>
+
         <link href="${root}/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.css" rel="stylesheet" type="text/css"/>
         <link href="${root}/css/admin/AdminLTE.min.css" rel="stylesheet" type="text/css"/>
@@ -29,12 +37,7 @@
 
     <body class="hold-transition skin-green sidebar-mini">
 
-       <%
-            User_staff us = (User_staff) session.getAttribute("us");
-            if (us == null) {
-                response.sendRedirect("/admin/login.jsp");
-            }            
-        %>
+
 
         <jsp:include page="../_Header.jsp"></jsp:include>
         <jsp:include page="../_Slidebar.jsp"></jsp:include>
@@ -48,7 +51,7 @@
                         <div class="box-body col-md-6 ">
                             <form role="form" action="/ManagerSuppliesServlet" method="post">
                                 <!-- text input -->                               
-                                
+
                                 <div class="form-group">
                                     <label>Tên thương hiệu</label>
                                     <input type="text" name="nameSupplies" class="form-control" placeholder="Enter ...">
@@ -68,15 +71,15 @@
                                     </div>
                                     <div class=" col-md-6">                                    
                                         <a href="${root}/admin/manager_supplies/index.jsp"><button type="button" class="btn btn-block btn-warning">Trở về</button></a>
-                                    </div>
-
                                 </div>
-                            </form>
-                        </div>
-                        <!-- /.box-body -->
+
+                            </div>
+                        </form>
                     </div>
+                    <!-- /.box-body -->
                 </div>
             </div>
+        </div>
 
         <jsp:include page="../_Footer.jsp"></jsp:include>
 

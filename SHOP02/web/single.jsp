@@ -44,103 +44,104 @@
                 });
             });
         </script>
+
         <!---//End-rate---->
-        <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
-    </head>
-    <body>
-        <%
-            ProductDAO productDAO = new ProductDAO();
-            Product product = new Product();
-            String productID = "";
-            if (request.getParameter("product") != null) {
-                productID = request.getParameter("product");
-                product = productDAO.getProduct(Long.parseLong(productID));
-            }
-        %>
-        <!--header-->
-        <jsp:include page="_Header.jsp"></jsp:include>
-            <!--banner-->
-            <div class="banner-top">
-                <div class="container">
-                    <h1>Single</h1>
-                    <em></em>
-                    <h2><a href="index.html">Home</a><label>/</label>Single</a></h2>
-                </div>
+    <link href="css/form.css" rel="stylesheet" type="text/css" media="all" />
+</head>
+<body>
+    <%
+        ProductDAO productDAO = new ProductDAO();
+        Product p = new Product();
+        String productID = "";
+        if (request.getParameter("product") != null) {
+            productID = request.getParameter("product");
+            p = productDAO.getProduct(Long.parseLong(productID));
+        }
+    %>
+    <!--header-->
+    <jsp:include page="_Header.jsp"></jsp:include>
+        <!--banner-->
+        <div class="banner-top">
+            <div class="container">
+                <h1>Single</h1>
+                <em></em>
+                <h2><a href="index.html">Home</a><label>/</label>Single</a></h2>
             </div>
-            <div class="single">
+        </div>
+        <div class="single">
 
-                <div class="container">
-                    <div class="col-md-12">
-                        <div class="col-md-5 grid">		
-                            <div class="flexslider">
-                                <ul class="slides">
-                                    <li data-thumb="images/si.jpg">
-                                        <div class="thumb-image"> <img src="images/<%=product.getProductImage()%>" data-imagezoom="true" class="img-responsive" alt="<%=product.getProductName()%>"> </div>
-                                </li>
+            <div class="container">
+                <div class="col-md-12">
+                    <div class="col-md-5 grid">		
+                        <div class="flexslider">
+                            <ul class="slides">
+                                <li data-thumb="images/si.jpg">
+                                    <div class="thumb-image"> <img src="images/<%=p.getProductImage()%>" data-imagezoom="true" class="img-responsive" alt="<%=p.getProductName()%>"> </div>
+                            </li>
 
+                        </ul>
+                    </div>
+                </div>	
+                <div class="col-md-7 single-top-in">
+                    <div class="span_2_of_a1 simpleCart_shelfItem">
+                        <h3><%=p.getProductName()%></h3>
+                        <p class="in-para"></p>
+                        <div class="price_single">
+                            <span class="reducedfrom item_price"> <%=p.getProductPrice()%> VND </span>
+                            <a href="#">click for offer</a>
+                            <div class="clearfix"></div>
+                        </div>
+                        <h4 class="quick">Mô tả sản phẩm:</h4>
+                        <p class="quick_desc"> <%=p.getProductDescription()%></p>
+                        <div class="wish-list">
+                            <ul>
+
+                                <li class="compare"><a href="CartServlet?command=plus&productID=<%=p.getProductID()%>"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
                             </ul>
                         </div>
-                    </div>	
-                    <div class="col-md-7 single-top-in">
-                        <div class="span_2_of_a1 simpleCart_shelfItem">
-                            <h3><%=product.getProductName()%></h3>
-                            <p class="in-para"></p>
-                            <div class="price_single">
-                                <span class="reducedfrom item_price"> <%=product.getProductPrice()%> VND </span>
-                                <a href="#">click for offer</a>
-                                <div class="clearfix"></div>
+                        <div class="quantity"> 
+                            <div class="quantity-select">                           
+                                <div class="entry value-minus">&nbsp;</div>
+                                <div class="entry value"><span>1</span></div>
+                                <div class="entry value-plus active">&nbsp;</div>
                             </div>
-                            <h4 class="quick">Mô tả sản phẩm:</h4>
-                            <p class="quick_desc"> <%=product.getProductDescription()%></p>
-                            <div class="wish-list">
-                                <ul>
-                                    <li class="wish"><a href="#"><span class="glyphicon glyphicon-check" aria-hidden="true"></span>Add to Wishlist</a></li>
-                                    <li class="compare"><a href="#"><span class="glyphicon glyphicon-resize-horizontal" aria-hidden="true"></span>Add to Compare</a></li>
-                                </ul>
-                            </div>
-                            <div class="quantity"> 
-                                <div class="quantity-select">                           
-                                    <div class="entry value-minus">&nbsp;</div>
-                                    <div class="entry value"><span>1</span></div>
-                                    <div class="entry value-plus active">&nbsp;</div>
-                                </div>
-                            </div>
-                            <!--quantity-->
-                            <script>
-                                $('.value-plus').on('click', function () {
-                                    var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) + 1;
-                                    divUpd.text(newVal);
-                                });
-
-                                $('.value-minus').on('click', function () {
-                                    var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) - 1;
-                                    if (newVal >= 1)
-                                        divUpd.text(newVal);
-                                });
-                            </script>
-                            <!--quantity-->
-
-                            <a href="#" class="add-to item_add hvr-skew-backward">Thêm vào giỏ hàng</a>
-                            <div class="clearfix"> </div>
                         </div>
-                    <div class="fb-comments" data-href="http://localhost:8080/single.jsp?product=<%= product.getProductID()%>" data-numposts="5"></div>
+                        <!--quantity-->
+                        <script>
+                            $('.value-plus').on('click', function () {
+                                var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) + 1;
+                                divUpd.text(newVal);
+                            });
 
+                            $('.value-minus').on('click', function () {
+                                var divUpd = $(this).parent().find('.value'), newVal = parseInt(divUpd.text(), 10) - 1;
+                                if (newVal >= 1)
+                                    divUpd.text(newVal);
+                            });
+                        </script>
+                        <!--quantity-->
+
+                        <a href="CartServlet?command=plus&productID=<%=p.getProductID()%>" class="add-to item_add hvr-skew-backward">Thêm vào giỏ hàng</a>
+                        <div class="clearfix"> </div>
                     </div>
-                    <div class="clearfix"> </div>
-                </div>
-                <!----->
+                    <div class="fb-comments" data-href="http://shopht.jelastic.skali.net/single.jsp?product=<%=p.getProductID()%>" data-width="620px" data-numposts="5"></div>
 
+                </div>
                 <div class="clearfix"> </div>
             </div>
-        </div>
-        <!--brand-->
-        <jsp:include page="_Branch-img.jsp"></jsp:include>
-            <!--//brand-->
-        </div>
+            <!----->
 
+            <div class="clearfix"> </div>
+        </div>
     </div>
-    <!--//content-->
-    <!--//footer-->
+    <!--brand-->
+    <jsp:include page="_Branch-img.jsp"></jsp:include>
+        <!--//brand-->
+    </div>
+
+</div>
+<!--//content-->
+<!--//footer-->
 <jsp:include page="_Footer.jsp"></jsp:include>
 <!--//footer-->
 <script src="js/imagezoom.js"></script>
@@ -151,12 +152,12 @@
 
 <script>
 // Can also be used with $(document).ready()
-                                $(window).load(function () {
-                                    $('.flexslider').flexslider({
-                                        animation: "slide",
-                                        controlNav: "thumbnails"
-                                    });
+                            $(window).load(function () {
+                                $('.flexslider').flexslider({
+                                    animation: "slide",
+                                    controlNav: "thumbnails"
                                 });
+                            });
 </script>
 
 <script src="js/simpleCart.min.js"></script>

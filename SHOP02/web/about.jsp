@@ -1,8 +1,11 @@
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Liên hệ</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>Shop thời trang</title>
         <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
         <!-- Custom Theme files -->
         <!--theme-style-->
@@ -44,73 +47,33 @@
         <!---//End-rate---->
     </head>
     <body>
-        <!--header-->
         <jsp:include page="_Header.jsp"></jsp:include>
-            <!--banner-->
+
             <div class="banner-top">
                 <div class="container">
-                    <h1>Liên hệ</h1>
+                    <h1>Giới thiệu</h1>
                     <em></em>
-                    <h2><a href="index.jsp">Trang chủ</a><label>/</label>Liên hệ</h2>
+                    <h2><a href="index.jsp">Trang chủ</a><label>/</label>Giới thiệu</h2>
                 </div>
-            </div>	
-
+            </div>
             <div class="contact">
 
                 <div class="contact-form">
                     <div class="container">
-                        <div class="col-md-6 contact-left">
-                            <div class="map">
-
-                                <h3>Địa chỉ cửa hàng</h3>
-                                <br>
-                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979.7801793001702!2d106.71424882916921!3d10.802065316860281!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTDCsDQ4JzA3LjQiTiAxMDbCsDQyJzUzLjMiRQ!5e0!3m2!1svi!2s!4v1484554416503" width="600" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
-                            </div>
-                        </div>
-                        <div class="col-md-6 contact-top">
-                            <h3>Liên hệ với chúng tôi</h3>
-                            <form  action="ContactServlet" method="post">
-                                <div>
-                                    <span>Họ và Tên</span>		
-                                    <input type="text" value="" name="Name">						
-                                </div>
-                                <div>
-                                    <span>Email </span>		
-                                    <input type="text" value="" name="Email">						
-                                </div>
-                                <div>
-                                    <span>Tiêu đề</span>		
-                                    <input type="text" value="" name="Subject">	
-                                </div>
-                                <div>
-                                    <span>Nội dung</span>		
-                                    <textarea name="Message"> </textarea>	
-                                </div>
-                                <label class="hvr-skew-backward">
-                                    <input type="submit" value="Send" >
-                                </label>
-                            </form>						
-                        </div>
-
+                        <span> Thời trang nam Catsashop là một thương hiệu thời trang thành lập năm 2011, có cửa hàng đại diện tại 1190 Cách mạng Tháng 8, phường 4, quận Tân Bình, TP Hồ Chí Minh.
+                            <br>
+                            Chỉ sau hơn 3 năm, cùng với sự năng động của thị trường Sài Gòn, hướng kinh doanh đúng đắn và không ngừng gia tăng chất lượng sản phẩm, chất lượng dịch vụ, cho đến nay CATSASHOP là một trong những thương hiệu thời trang nam được ưa thích nhất của các bạn trẻ miền Nam. CATSASHOP đã sở hữu hệ thống trên 40 chi nhánh có mặt trên toàn quốc, tập trung chính tại địa bàn thành phố Hồ Chí Minh (hơn 20 cửa hàng).
+                            <br>
+                            Các mặt hàng chính của CATSASHOP là quần jeans, áo thun, áo sơ mi, kaki, đồ phụ kiện…Chiến lược giá thấp, phân khúc khách hàng tập trung vào giới trẻ, liên tục đa dạng và nâng cao chất lượng sản phẩm, dịch vụ… Định hướng kinh doanh đúng đã đưa hệ thống thời trang nam CATSASHOP phát triển nhanh chóng. Giai đoạn 2014-2016 sẽ là giai đoạn quy hoạch phát triển bền vững của thương hiệu.
+                            <br>
+                            Bên cạnh đó, CATSASHOP trở thành một trong những hãng thời trang nam đi đầu trong việc sử dụng mô hình Franchise (Nhượng quyền thương hiệu) tại thành phố Hồ Chí Minh. Đây là mô hình kinh doanh khá phổ biến trên thế giới từ những năm đầu thập kỷ 20. Lợi thế của nó là tạo ra một làn sóng kinh doanh đồng thương hiệu từ việc tận dụng đồng tiền nhàn rỗi của người khác. Tại Việt Nam, những thương hiệu nhượng quyền thành công đã vươn tới tầm Đông Nam Á. Thương hiệu thời trang nam CATSASHOP đã có kinh nghiệm quản lý, điều hành hệ thống và định hướng vươn lên phát triển đồng hành với các thương hiệu uy tín phục vụ cho giới trẻ trên địa bàn thành phố Hồ Chí Minh.
+                        </span>
+                        <br>Website: catsashop.com | Facebook: https://www.facebook.com/catsashop | email: lienhe@catsashop.com | SDT: 0909.574.689
                     </div>
                 </div>
-
             </div>
 
-            <!--//contact-->
-            <!--brand-->
         <jsp:include page="_Branch-img.jsp"></jsp:include>
-            <!--//brand-->
-
-            <!--//content-->
-            <!--//footer-->
         <jsp:include page="_Footer.jsp"></jsp:include>
-        <!--//footer-->
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-        <script src="js/simpleCart.min.js"></script>
-        <!-- slide -->
-        <script src="js/bootstrap.min.js"></script>
-
     </body>
 </html>

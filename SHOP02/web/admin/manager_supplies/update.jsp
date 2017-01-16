@@ -1,3 +1,4 @@
+<%@page import="model.User_staff"%>
 <%@page import="model.Supply"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="dao.SupplyDAO"%>

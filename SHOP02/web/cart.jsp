@@ -65,7 +65,7 @@
                 <div class="container">
                     <h1>Giỏ hàng</h1>
                     <em></em>
-                    <h2><a href="index.html">Trang chủ</a><label>/</label>Giỏ hàng</a></h2>
+                    <h2><a href="index.jsp">Trang chủ</a><label>/</label>Giỏ hàng</a></h2>
                 </div>
             </div>
             <!--login-->

@@ -5,6 +5,12 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
+<%
+    User_staff us = (User_staff) session.getAttribute("us");
+    if (us == null) {
+        response.sendRedirect("/admin/login.jsp");
+    }
+%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,14 +35,7 @@
 
     <body class="hold-transition skin-green sidebar-mini">
 
-        <%
-            
-            User_staff us = (User_staff) session.getAttribute("us");
-            if (us == null) {
-                response.sendRedirect("/SHOP02/admin/login.jsp");
-            }            
-        
-            SupplyDAO supplyDAO = new SupplyDAO();
+        <%            SupplyDAO supplyDAO = new SupplyDAO();
             ArrayList<Supply> listSupply = supplyDAO.getListSupply();
         %>
 

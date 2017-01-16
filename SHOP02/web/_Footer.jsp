@@ -1,9 +1,3 @@
-<%-- 
-    Document   : _Footer
-    Created on : Dec 3, 2016, 6:10:02 PM
-    Author     : thanh_000
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -14,47 +8,32 @@
         <div class="footer">
             <div class="footer-middle">
                 <div class="container">
-                    <div class="col-md-3 footer-middle-in">
-                        <a href="index.html"><img src="images/log.png" alt=""></a>
+                    <div class="col-md-4 footer-middle-in">
+                        <a href="index.jsp"><img src="images/log.png" alt=""></a>
                         <p>Suspendisse sed accumsan risus. Curabitur rhoncus, elit vel tincidunt elementum, nunc urna tristique nisi, in interdum libero magna tristique ante. adipiscing varius. Vestibulum dolor lorem.</p>
                     </div>
 
                     <div class="col-md-3 footer-middle-in">
-                        <h6>Information</h6>
-                        <ul class=" in">
-                            <li><a href="404.html">About</a></li>
-                            <li><a href="contact.html">Contact Us</a></li>
-                            <li><a href="#">Returns</a></li>
-                            <li><a href="contact.html">Site Map</a></li>
+                        <h6>Thông tin</h6>
+                        <ul class="in">
+                            <li><a href="about.jsp">Giới thiệu</a></li>                            
+                            <li><a href="#small-dialog">Tìm kiếm</a></li>
+                            <li><a href="contact.jsp">Liên hệ</a></li>
+                            <li><a href="cart.jsp">Giỏ hàng</a></li>
                         </ul>
                         <ul class="in in1">
-                            <li><a href="#">Order History</a></li>
-                            <li><a href="wishlist.html">Wish List</a></li>
-                            <li><a href="login.html">Login</a></li>
+                            <li><a href="register.jsp">Đăng ký</a></li>
+                            <li><a href="login.jsp">Đăng nhập</a></li>
+                            <li><a href="checkout.jsp">Thanh toán</a></li>
+
                         </ul>
                         <div class="clearfix"></div>
                     </div>
-                    <div class="col-md-3 footer-middle-in">
-                        <h6>Tags</h6>
-                        <ul class="tag-in">
-                            <li><a href="finditem.jsp?key=Sơ mi">Sơ mi</a></li>                            
-                            <li><a href="#">Sed</a></li>
-                            <li><a href="#">Ipsum</a></li>
-                            <li><a href="#">Contrary</a></li>
-                            <li><a href="#">Chunk</a></li>
-                            <li><a href="#">Amet</a></li>
-                            <li><a href="#">Omnis</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-3 footer-middle-in">
-                        <h6>Newsletter</h6>
-                        <span>Sign up for News Letter</span>
-                        <form>
-                            <input type="text" value="Enter your E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                        this.value = 'Enter your E-mail';
-                                    }">
-                            <input type="submit" value="Subscribe">	
-                        </form>
+                    <div class="col-md-1 footer-middle-in"></div>
+                    <div class="col-md-4 footer-middle-in">
+
+                        <div class="fb-page" data-href="https://www.facebook.com/C&#xf4;ng-ty-Hoa-t&#x1b0;&#x1a1;i-H-T-329486594090491/" data-tabs="message" data-small-header="true" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/C&#xf4;ng-ty-Hoa-t&#x1b0;&#x1a1;i-H-T-329486594090491/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/C&#xf4;ng-ty-Hoa-t&#x1b0;&#x1a1;i-H-T-329486594090491/">SHOP THỜI TRANG H &amp; T</a></blockquote></div>
+
                     </div>
                     <div class="clearfix"> </div>
                 </div>
@@ -62,9 +41,9 @@
             <div class="footer-bottom">
                 <div class="container">
                     <ul class="footer-bottom-top">
-                        <li><a href="#"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
-                        <li><a href="#"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
+                        <li><a href="checkout.jsp"><img src="images/f1.png" class="img-responsive" alt=""></a></li>
+                        <li><a href="checkout.jsp"><img src="images/f2.png" class="img-responsive" alt=""></a></li>
+                        <li><a href="checkout.jsp"><img src="images/f3.png" class="img-responsive" alt=""></a></li>
                     </ul>
 
                     <div class="clearfix"> </div>
